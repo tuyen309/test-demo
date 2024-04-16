@@ -66,3 +66,140 @@ Click the "Checkout" button.
 Expected Result:
 The user is directed to the checkout information page (validation of complete checkout flow may require additional testing).
 These are just a few examples. You can create more test cases based on the specific functionalities of the website.
+
+est Case 7: Verify Product Image Display
+
+Test Condition: User logged in with valid credentials
+Action Steps:
+Login using a valid user.
+Navigate to any product page.
+Verify the product image is displayed correctly.
+Expected Result:
+The product image should be displayed clearly and without any errors.
+Test Case 8: Validate Product Details
+
+Test Condition: User logged in with valid credentials
+Action Steps:
+Login using a valid user.
+Navigate to any product page.
+Verify the product details (name, price, description, etc.) are displayed correctly and match the product information.
+Expected Result:
+All product details should be displayed accurately and as expected.
+Test Case 9: Check Product Reviews
+
+Test Condition: User logged in with valid credentials
+Action Steps:
+Login using a valid user.
+Navigate to a product page with existing reviews.
+Verify the product reviews are displayed correctly and include reviewer name, rating, and review text.
+Expected Result:
+Product reviews should be displayed in a clear and organized manner, including all relevant information.
+Test Case 10: Place Order with Different Payment Methods
+
+Test Condition: User logged in with valid credentials, items added to cart
+Action Steps:
+Login using a valid user.
+Add one or more products to the cart.
+Click on the "Shopping Cart" link.
+Click the "Checkout" button.
+Fill out the checkout information (address, shipping details).
+Choose a payment method (e.g., credit card, PayPal).
+Enter payment information.
+Click the "Place Order" button.
+Expected Result:
+The order should be processed successfully using the chosen payment method.
+A confirmation message or order summary page should be displayed.
+Test Case 11: Order Tracking
+
+Test Condition: User logged in with valid credentials, successful order placed
+Action Steps:
+Login using a valid user.
+Access the order tracking section (if available).
+Enter the order number or track using another method.
+Expected Result:
+The order tracking information should be displayed accurately, including order status, shipping details, and delivery estimates.
+
+est Case 12: Social Media Integration
+
+Test Condition: User logged in with valid credentials
+Action Steps:
+Login using a valid user.
+Navigate to a product page.
+Verify social media sharing buttons are displayed for the product.
+Click on a social media sharing button (e.g., Facebook, Twitter).
+Attempt to share the product on the selected social media platform.
+Expected Result:
+Social media sharing buttons should be displayed correctly.
+The sharing process should be seamless and allow users to share the product on their chosen social media platforms.
+Test Case 13: Product Search
+
+Test Condition: User logged in with valid credentials
+Action Steps:
+Login using a valid user.
+Access the product search bar.
+Enter a valid product name or keyword.
+Click the search button or press Enter.
+Expected Result:
+The search results page should be displayed with relevant products matching the search query.
+Search results should be sorted and filtered based on user preferences (if available).
+Test Case 14: User Account Management
+
+Test Condition: User logged in with valid credentials
+Action Steps:
+Login using a valid user.
+Access the user account management section.
+Verify the user can edit their profile information (e.g., name, address, email).
+Verify the user can change their password.
+Expected Result:
+Users should be able to access and manage their account information.
+Password changes should be implemented securely and require appropriate validation.
+Test Case 15: Email Notifications
+
+Test Condition: User logged in with valid credentials
+Action Steps:
+Login using a valid user.
+Place an order.
+Verify the user receives email notifications for order confirmation, shipping updates, and other relevant activities.
+Expected Result:
+Users should receive timely and informative email notifications related to their account and orders.
+Email notifications should be formatted correctly and adhere to best practices for email marketing.
+Test Case 16: Cross-Browser Compatibility
+
+Test Condition: Valid website URL
+Action Steps:
+Launch the website in different browsers (e.g., Chrome, Firefox, Safari, Edge).
+Perform basic navigation and actions on each browser.
+Verify the website's layout, functionality, and content are displayed consistently across all browsers.
+Expected Result:
+The website should function correctly and consistently across different browsers without any major layout or functionality issues.
+Test Case 17: Responsive Design
+
+Test Condition: Valid website URL
+Action Steps:
+Access the website on different screen sizes (e.g., desktop, tablet, mobile).
+Resize the browser window or use device simulators to test different resolutions.
+Verify the website's layout, elements, and navigation adapt appropriately to different screen sizes.
+Expected Result:
+The website should provide a responsive design that adapts seamlessly to various screen sizes and devices, ensuring optimal user experience across all platforms.
+Test Case 18: Performance Testing
+
+Test Condition: Valid website URL and load testing tool
+Action Steps:
+Launch the website and simulate a high volume of users or traffic using a load testing tool.
+Monitor website performance metrics (e.g., response time, page load time, resource usage).
+Identify potential performance bottlenecks or areas for optimization.
+Expected Result:
+The website should maintain acceptable performance levels under increased load and traffic, ensuring a smooth and responsive user experience for all visitors.
+Test Case 19: Accessibility Testing
+
+Test Condition: Valid website URL and accessibility testing tools
+Action Steps:
+Evaluate the website's accessibility using tools like screen readers, keyboard navigation testers, and color contrast checkers.
+Identify any accessibility issues that could hinder users with disabilities from accessing and using the website effectively.
+Expected Result:
+The website should adhere to accessibility guidelines and provide a usable and inclusive experience for all users, regardless of their abilities or limitations.
+Test Case 20: Security Testing
+
+Test Condition: Valid website URL and security testing tools
+Action Steps:
+Perform vulnerability scans, penetration testing,
