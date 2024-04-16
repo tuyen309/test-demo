@@ -1,0 +1,68 @@
+Test Case 1: Login Functionality
+Test Condition: Valid username and password combination
+Action Steps:
+- Open the website.
+- Enter a valid username (standard_user).
+- Enter the password (secret_sauce).
+- Click the login button.
+Expected Result:
+The user successfully logs in and is redirected to the product inventory page.
+
+
+Test Case 2: Login with Invalid Credentials
+Test Conditions: With the following cases:
+- Incorrect username
+- Incorrect password
+- Both username and password incorrect
+Action Steps:
+- Open the website.
+- Enter a valid username.
+- Enter the password.
+- Click the login button.
+Expected Result:
+An error message is displayed indicating invalid login credentials.
+
+Test Case 3: Login with Locked User
+Test Condition: Username: locked_out_user
+Action Steps:
+- Open the website.
+- Enter "locked_out_user" as the username.
+- Enter a valid password (secret_sauce).
+- Click the login button.
+Expected Result:
+An error message is displayed indicating the user account is locked.
+
+Test Case 4: Add and Remove Item from Cart
+Test Condition: User logged in with valid credentials
+Action Steps:
+- Login using a valid user (standard_user).
+- Click the "Add to cart" button for a specific product.
+- Click on the "Shopping Cart" link.
+- Verify the added product is displayed in the cart.
+- Click the "Remove" button for the added product.
+Expected Result:
+The chosen product is added to the shopping cart.
+The shopping cart displays the added product with quantity 1.
+After clicking "Remove," the product is no longer present in the cart.
+
+
+
+Test Case 5: Product Filtering
+Test Condition: User logged in with valid credentials
+Action Steps:
+- Login using a valid user.
+- Access the product filtering options (if available).
+- Apply a filter (sort by price - low to high).
+Expected Result:
+The product list is displayed with the applied filter criteria.
+
+Test Case 6: Checkout Process (basic validation only)
+Test Condition: User logged in with valid credentials, items added to cart
+Action Steps:
+Login using a valid user.
+Add one or more products to the cart.
+Click on the "Shopping Cart" link.
+Click the "Checkout" button.
+Expected Result:
+The user is directed to the checkout information page (validation of complete checkout flow may require additional testing).
+These are just a few examples. You can create more test cases based on the specific functionalities of the website.
