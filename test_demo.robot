@@ -1,5 +1,7 @@
 *** Settings ***
 Library      SeleniumLibrary
+Library      Collections
+Library      String
 
 *** Variables *** 
 ${username}    standard_user
@@ -23,6 +25,9 @@ ${continuebutton}     //input[@id="continue"]
 ${finishbutton}   //button[@id="finish"]
 ${messagesuccesful}    //h2[text()="Thank you for your order!"]
 ${messageunsuccesful}    //*[text()="Error: First Name is required"]
+
+${selectfiteritem}    //select[@class="product_sort_container"]
+${selectfiterlowhigh}    //select[@class="product_sort_container"]/option[text()="Price (low to high)"]
 
 *** Keywords ***
 Open Sauce Demo Website
@@ -57,12 +62,30 @@ Product payment Not Fill Info
     Click Element     ${continuebutton}
     Element Should Be Visible     ${messageunsuccesful}
 
+Filter products
+    Click Element      ${selectfiteritem}
+    Click Element      ${selectfiterlowhigh}
+    @{priceitems}=    Create List
+    @{items}=    Get WebElements    //div[@class="inventory_item_price"]
+    FOR    ${item}     IN    @{items}
+        ${priceitem}=    Get Text     ${item}
+        ${price_without_dollar}=  Remove String    ${priceitem}    $
+        ${price_as_number}       Evaluate    float(${price_without_dollar})
+        Append To List    ${priceitems}    ${price_as_number} 
+    END
+    ${expected_sorted_prices}=    Copy List    ${priceitems}
+    Sort List    ${expected_sorted_prices}
+    Log    ${expected_sorted_prices}
+    Should Be Equal    ${priceitems}    ${expected_sorted_prices}
+
+
 *** Test Cases ***
 Checkout Successfully
     Open Sauce Demo Website
     Login To Web Page
     Add product to cart
     Product payment
+    Close Browser
     [Tags]   TC     TC1
 
 Checkout UnSuccessfully
@@ -70,7 +93,12 @@ Checkout UnSuccessfully
     Login To Web Page
     Add product to cart
     Product payment Not Fill Info
+    Close Browser
     [Tags]   TC     TC2
 
-
-    
+Filter products by price from low to high
+    Open Sauce Demo Website
+    Login To Web Page
+    Filter products
+    Close Browser
+    [Tags]   TC     TC3
