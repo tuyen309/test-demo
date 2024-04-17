@@ -64,8 +64,18 @@ Add one or more products to the cart.
 Click on the "Shopping Cart" link.
 Click the "Checkout" button.
 Expected Result:
-The user is directed to the checkout information page (validation of complete checkout flow may require additional testing).
+The user is directed to the checkout information page (validation of the complete checkout flow may require additional testing).
 These are just a few examples. You can create more test cases based on the specific functionalities of the website.
+
+Test Case 6: Login with locked-out user
+Test Condition: Username combination locked out
+Action Steps:
+- Open the website.
+- Enter a valid username (standard_user).
+- Enter the password (locked_out_user).
+- Click the login button.
+Expected Result:
+Display the message "this user has been locked out."
 
 est Case 7: Verify Product Image Display
 
