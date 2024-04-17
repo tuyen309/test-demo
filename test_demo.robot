@@ -4,10 +4,11 @@ Library      Collections
 Library      String
 
 *** Variables *** 
-${username}    standard_user
+${usernamestandard}    standard_user
 ${password}    secret_sauce
-${firstname}    Tuyen
-${lastname}    Test
+${usernamelocked}    locked_out_user
+${firstname}    First
+${lastname}    Last
 ${postalcode}       12345
 
 ${usernameinput}     //input[@id="user-name"]
@@ -28,6 +29,7 @@ ${messageunsuccesful}    //*[text()="Error: First Name is required"]
 
 ${selectfiteritem}    //select[@class="product_sort_container"]
 ${selectfiterlowhigh}    //select[@class="product_sort_container"]/option[text()="Price (low to high)"]
+${messageuserlockedout}    //h3[text()="Epic sadface: Sorry, this user has been locked out."]
 
 *** Keywords ***
 Open Sauce Demo Website
@@ -35,6 +37,7 @@ Open Sauce Demo Website
     Maximize Browser Window
 
 login To Web Page
+    [Arguments]      ${username}    ${password}
     Wait Until Element Is Enabled    ${usernameinput}
     Input Text    ${usernameinput}    ${username}
     Wait Until Element Is Enabled    ${passwordinput}
@@ -81,24 +84,32 @@ Filter products
 
 *** Test Cases ***
 Checkout Successfully
-    Open Sauce Demo Website
-    Login To Web Page
+    [Setup]    Run Keyword       Open Sauce Demo Website 
+    Login To Web Page    ${usernamestandard}    ${password}
     Add product to cart
     Product payment
     Close Browser
     [Tags]   TC     TC1
 
 Checkout UnSuccessfully
-    Open Sauce Demo Website
-    Login To Web Page
+    [Setup]    Run Keyword       Open Sauce Demo Website
+    Login To Web Page    ${usernamestandard}    ${password}
     Add product to cart
     Product payment Not Fill Info
     Close Browser
     [Tags]   TC     TC2
 
 Filter products by price from low to high
-    Open Sauce Demo Website
-    Login To Web Page
+    [Setup]    Run Keyword       Open Sauce Demo Website
+    Login To Web Page    ${usernamestandard}    ${password}
     Filter products
     Close Browser
     [Tags]   TC     TC3
+
+Login with Locked User
+    [Setup]    Run Keyword       Open Sauce Demo Website
+    Login To Web Page    ${usernamelocked}    ${password}
+    Element Should Be Visible     ${messageuserlockedout}
+    Close Browser
+    [Tags]   TC     TC4
+    
